@@ -14,26 +14,29 @@
 <body>
     <h1>Kvadrāt vienādojums</h1>
 
-    <p><input type="number" placeholder="a" id="a"> <input type="number" placeholder="b" id="b"> 
-    <input type="number" placeholder="c" id="c"> </p>
+    <p><input type="number" placeholder="a" id="ak"> <input type="number" placeholder="b" id="bk"> 
+    <input type="number" placeholder="c" id="ck"> </p>
 
     <p><button type="button" onclick="aprecinat()">Aprēķināt</button></p>
+    <p><span id="x"></span></p>
 
     <script>
-        var a1, b1, c1, atbilde, result;
+        var a1, b1, c1, atbilde, result, korni, atbilde2;
         a1=0;
         b1=0;
         c1=0;
         result="";
+        korni=[];
 
         function aprecinat(){
-            a1=a.value;
-            b1=b.value;
-            c1=b.value;
+            a1=ak.value;
+            b1=bk.value;
+            c1=bk.value;
 
             var result=disk(a1, b1, c1);
+            korni=disk2(a1, b1, c1);
 
-
+            x.innerHTML=result+" "+"x1="+korni[0]+"|"+" "+"x2="+korni[1];
         }
 
         function disk(a, b, c){
@@ -41,6 +44,20 @@
             if(atbilde<0){
                 return "skanes nav";
             }
+            else if(atbilde>=0){
+                return "1 sakne";
+            }
+            else if(atbilde>0){
+                return "2 saknes";
+            }
+        }
+        function disk2(a, b, c){
+            atbilde2 = (b*b)-(4*a*c);
+
+            var x1=(-b+Math.sqrt(atbilde2)/(2*a));
+            var x2=(-b+Math.sqrt(atbilde2)/(2*a));
+
+            return [x1, x2];
         }
 
         

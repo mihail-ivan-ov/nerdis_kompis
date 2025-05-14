@@ -1,0 +1,1 @@
+# nerdis_kompis

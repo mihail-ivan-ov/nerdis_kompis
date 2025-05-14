@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kvadrāt vienādojums</h1>
+
+    <p><input type="number" placeholder="a" id="a"> <input type="number" placeholder="b" id="b"> 
+    <input type="number" placeholder="c" id="c"> </p>
+
+    <p><button type="button" onclick="aprecinat()">Aprēķināt</button></p>
+
+    <script>
+        var a1, b1, c1, atbilde, result;
+        a1=0;
+        b1=0;
+        c1=0;
+        result="";
+
+        function aprecinat(){
+            a1=a.value;
+            b1=b.value;
+            c1=b.value;
+
+            var result=disk(a1, b1, c1);
+
+
+        }
+
+        function disk(a, b, c){
+            atbilde = (b*b)-(4*a*c);
+            if(atbilde<0){
+                return "skanes nav";
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
